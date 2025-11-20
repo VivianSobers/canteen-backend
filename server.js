@@ -5,11 +5,13 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const app = express();
 app.use(cors({
-  origin: "https://viviansobers.github.io",
+  origin: [
+    "https://viviansobers.github.io",
+    "https://viviansobers.github.io/Canteen"
+  ],
   methods: ["GET", "POST", "PATCH"],
   allowedHeaders: ["Content-Type"]
 }));
-
 
 app.use(express.json());
 mongoose.connect(process.env.MONGO_URL, {
